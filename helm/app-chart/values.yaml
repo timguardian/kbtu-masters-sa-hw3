@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image:
+  repository: timguardian/express-api
+  pullPolicy: IfNotPresent
+  tag: latest
+
+container:
+  port: 8081
+
+metrics:
+  serviceMonitor:
+    enabled: true
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
