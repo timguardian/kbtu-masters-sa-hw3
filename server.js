@@ -12,10 +12,11 @@ app.use(promMid({
 }));
 
 app.get('/welcome', (req, res) => {
+    const password = 'ajncakjsn&&dcnajkn,/';
     if(!req.query.name){
         res.status(400).send("You have not provided name");
     }else{
-        res.status(200).json({ message: `Hello, ${req.query.name}!` });
+        res.status(200).json({ message: `Hello, ${req.query.name}! Your password is: ${password}` });
     }
 });
 
